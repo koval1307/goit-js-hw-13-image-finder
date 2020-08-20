@@ -1,8 +1,4 @@
-
-
   const apiKey = "17963589-c265f5bdf910c5306ecbadda5";
-
-
 
 export default {
     searchQuery: " ",
@@ -19,7 +15,6 @@ export default {
     resetPage() {
     this.page = 1
 },
-
 get query() {
         return this.searchQuery;
     },
