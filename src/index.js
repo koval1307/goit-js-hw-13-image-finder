@@ -15,8 +15,12 @@ refs.imagesList.innerHTML = ' ';
     
     apiService.resetPage();
 
+  refs.loadMoreBtn.classList.add('is-hidden')
+
     apiService.fetchImg().then((hits) => {
       updateImgMarkup(hits);
+refs.loadMoreBtn.classList.remove('is-hidden')
+      form.reset();
     });
 })
 function updateImgMarkup(hits) {
@@ -28,5 +32,9 @@ refs.loadMoreBtn.addEventListener('click', () => {
     apiService.fetchImg()
         .then((hits) => {
       updateImgMarkup(hits);
-    });
+        });
+  window.scrollTo({
+    top: document.documentElement.offsetHeight,
+    behavior: 'smooth',
+  })
 })
